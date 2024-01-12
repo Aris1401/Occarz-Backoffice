@@ -1,0 +1,46 @@
+.demo-logo-vertical {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+  
+  .ant-layout-sider {
+    background-color: #001529;
+  }
+  
+  .ant-menu {
+    background-color: #001529;
+  }
+  
+  .ant-menu-item {
+    margin: 0 !important;
+  }
+  
+  .ant-menu-item,
+  .ant-menu-submenu-title {
+    color: #fff;
+  }
+  
+  .ant-menu-item-selected,
+  .ant-menu-submenu-title-selected,
+  .ant-menu-item-active,
+  .ant-menu-submenu-title-active {
+    background-color: #1890ff;
+  }
+  
+  .ant-layout-header {
+    padding: 0;
+    background: ${colorBgContainer};
+  }
+  
+  .ant-layout-content {
+    margin: 0 16px;
+  }
+  
+  .ant-breadcrumb {
+    margin: 16px 0;
+  }
+  
+  .ant-layout-footer {
+    text-align: center;
+  }  
