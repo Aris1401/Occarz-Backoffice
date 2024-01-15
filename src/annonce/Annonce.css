@@ -1,4 +1,18 @@
-.ant-layout {
+.ant-card {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .badges-container {
+    margin-top: 10px;
+  }
+  
+  .details-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .ant-layout {
     min-height: 100vh;
     display: flex;
     
@@ -48,4 +62,3 @@
   .ant-layout-footer {
     text-align: center;
   }
-  
