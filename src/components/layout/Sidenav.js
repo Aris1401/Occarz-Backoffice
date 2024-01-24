@@ -95,7 +95,7 @@ function Sidenav({ color }) {
     <>
       <div className="brand">
         <img src={logo} alt="" />
-        <span>Muse Dashboard</span>
+        <span>OCCARZ</span>
       </div>
       <hr />
       <Menu theme="light" mode="inline">
@@ -109,7 +109,7 @@ function Sidenav({ color }) {
             >
               {dashboard}
             </span>
-            <span className="label">Dashboard</span>
+            <span className="label">Statistiques</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="2">
@@ -122,7 +122,7 @@ function Sidenav({ color }) {
             >
               {tables}
             </span>
-            <span className="label">Tables</span>
+            <span className="label">Donnes</span>
           </NavLink>
         </Menu.Item>
         <Menu.Item key="3">
@@ -135,20 +135,7 @@ function Sidenav({ color }) {
             >
               {billing}
             </span>
-            <span className="label">Billing</span>
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="4">
-          <NavLink to="/rtl">
-            <span
-              className="icon"
-              style={{
-                background: page === "rtl" ? color : "",
-              }}
-            >
-              {rtl}
-            </span>
-            <span className="label">RTL</span>
+            <span className="label">Annonces</span>
           </NavLink>
         </Menu.Item>
       </Menu>
