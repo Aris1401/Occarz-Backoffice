@@ -3046,3 +3046,22 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   path {
   fill: #8c8c8c;
 }
+
+.custom-submenu .ant-menu-item {
+  padding-left: 40px;
+}
+
+.custom-submenu .ant-menu-item-group-title {
+  padding-left: 40px;
+  font-weight: bold;
+}
+
+.custom-submenu {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+}
+
+.custom-item-group {
+  padding-left: 24px;
+  font-weight: bold;
+}

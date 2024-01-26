@@ -1,10 +1,13 @@
 import { Menu} from "antd";
 import { NavLink, useLocation } from "react-router-dom";
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import logo from "../../assets/images/logo.png";
 
 function Sidenav({ color }) {
   const { pathname } = useLocation();
   const page = pathname.replace("/", "");
+
+  const { SubMenu } = Menu;
 
   const dashboard = [
     <svg
@@ -72,7 +75,7 @@ function Sidenav({ color }) {
       ></path>
     </svg>,
   ];
-  
+
   return (
     <>
       <div className="brand">
@@ -94,19 +97,23 @@ function Sidenav({ color }) {
             <span className="label">Statistiques</span>
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="2">
-          <NavLink to="/tables">
-            <span
-              className="icon"
-              style={{
-                background: page === "tables" ? color : "",
-              }}
-            >
+        <SubMenu
+          key="2"
+          title={
+            <>
+            <span className="icon" style={{ background: page === "tables" ? color : "" }}>
               {tables}
             </span>
-            <span className="label">Donnes</span>
-          </NavLink>
-        </Menu.Item>
+            <span className="label">Données</span>
+            </>
+          }
+          className="custom-submenu"
+        >
+          <Menu.ItemGroup className="custom-item-group">
+            <Menu.Item key="setting:1">Option 1</Menu.Item>
+            <Menu.Item key="setting:2">Option 2</Menu.Item>
+          </Menu.ItemGroup>
+        </SubMenu>
         <Menu.Item key="3">
           <NavLink to="/billing">
             <span
