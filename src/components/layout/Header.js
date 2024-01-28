@@ -12,6 +12,7 @@ import {
   Drawer,
   Typography,
   Switch,
+  Flex,
 } from "antd";
 
 import {
@@ -23,6 +24,7 @@ import {
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import avtar from "../../assets/images/team-2.jpg";
+import { doLogOut } from "../../services/auth/AuthServices";
 
 const ButtonContainer = styled.div`
   .ant-btn-primary {
@@ -241,6 +243,8 @@ function Header({
   handleSidenavColor,
   handleSidenavType,
   handleFixedNavbar,
+  name,
+  subName
 }) {
   const { Title, Text } = Typography;
 
@@ -254,133 +258,33 @@ function Header({
 
   return (
     <>
-      <div className="setting-drwer" onClick={showDrawer}>
-        {setting}
-      </div>
-      <Row gutter={[24, 0]}>
-        <Col span={24} md={18} className="header-control">
-        <Button danger>
-          Log out
-        </Button>
-          <Button type="link" onClick={showDrawer}>
-            {logsetting}
-          </Button>
-          <Button
-            type="link"
-            className="sidebar-toggler"
-            onClick={() => onPress()}
-          >
-            {toggler}
-          </Button>
-          <Drawer
-            className="settings-drawer"
-            mask={true}
-            width={360}
-            onClose={hideDrawer}
-            placement={placement}
-            visible={visible}
-          >
-            <div layout="vertical">
-              <div className="header-top">
-                <Title level={4}>
-                  Configurator
-                  <Text className="subtitle">See our dashboard options.</Text>
-                </Title>
-              </div>
 
-              <div className="sidebar-color">
-                <Title level={5}>Sidebar Color</Title>
-                <div className="theme-color mb-2">
-                  <ButtonContainer>
-                    <Button
-                      type="primary"
-                      onClick={() => handleSidenavColor("#1890ff")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="success"
-                      onClick={() => handleSidenavColor("#52c41a")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="danger"
-                      onClick={() => handleSidenavColor("#d9363e")}
-                    >
-                      1
-                    </Button>
-                    <Button
-                      type="yellow"
-                      onClick={() => handleSidenavColor("#fadb14")}
-                    >
-                      1
-                    </Button>
-
-                    <Button
-                      type="black"
-                      onClick={() => handleSidenavColor("#111")}
-                    >
-                      1
-                    </Button>
-                  </ButtonContainer>
-                </div>
-
-                <div className="sidebarnav-color mb-2">
-                  <Title level={5}>Sidenav Type</Title>
-                  <Text>Choose between 2 different sidenav types.</Text>
-                  <ButtonContainer className="trans">
-                    <Button
-                      type={sidenavType === "transparent" ? "primary" : "white"}
-                      onClick={() => {
-                        handleSidenavType("transparent");
-                        setSidenavType("transparent");
-                      }}
-                    >
-                      TRANSPARENT
-                    </Button>
-                    <Button
-                      type={sidenavType === "white" ? "primary" : "white"}
-                      onClick={() => {
-                        handleSidenavType("#fff");
-                        setSidenavType("white");
-                      }}
-                    >
-                      WHITE
-                    </Button>
-                  </ButtonContainer>
-                </div>
-                <div className="fixed-nav mb-2">
-                  <Title level={5}>Navbar Fixed </Title>
-                  <Switch onChange={(e) => handleFixedNavbar(e)} />
-                </div>
-                <div className="ant-docment">
-                  <ButtonContainer>
-                    <Button type="black" size="large">
-                      FREE DOWNLOAD
-                    </Button>
-                    <Button size="large">VIEW DOCUMENTATION</Button>
-                  </ButtonContainer>
-                </div>
-                <div className="viewstar">
-                  <a href="#pablo">{<StarOutlined />} Star</a>
-                  <a href="#pablo"> 190</a>
-                </div>
-
-                <div className="ant-thank">
-                  <Title level={5} className="mb-2">
-                    Thank you for sharing!
-                  </Title>
-                  <ButtonContainer className="social">
-                    <Button type="black">{<TwitterOutlined />}TWEET</Button>
-                    <Button type="black">{<FacebookFilled />}SHARE</Button>
-                  </ButtonContainer>
-                </div>
-              </div>
-            </div>
-          </Drawer>
+      <Flex justify="space-between">
+        <Col span={24} md={6}>
+          <Breadcrumb>
+            <Breadcrumb.Item>
+              <NavLink to="/">Pages</NavLink>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item style={{ textTransform: "capitalize" }}>
+              {name.replace("/", "")}
+            </Breadcrumb.Item>
+          </Breadcrumb>
+          <div className="ant-page-header-heading">
+            <span
+              className="ant-page-header-heading-title"
+              style={{ textTransform: "capitalize" }}
+            >
+              {subName.replace("/", "")}
+            </span>
+          </div>
         </Col>
-      </Row>
+
+        <Col className="header-control">
+          <Button danger onClick={() => { doLogOut() }}>
+            Log out
+          </Button>
+        </Col>
+      </Flex>
     </>
   );
 }

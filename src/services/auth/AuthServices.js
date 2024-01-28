@@ -15,3 +15,13 @@ export const sendLoginInformations = (loginInfos) => {
         })
     });
 }
+
+export const doLogOut = () => {
+    axiosInstance.post("/auth/deconnexion").then((data) => {
+        window.localStorage.removeItem("role");
+        window.localStorage.removeItem("accessToken");
+        window.localStorage.removeItem("refreshToken");
+        
+        window.location.href = "/login";
+    })
+}

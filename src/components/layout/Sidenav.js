@@ -1,6 +1,6 @@
 import { Menu} from "antd";
 import { NavLink, useLocation } from "react-router-dom";
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined, ContainerOutlined } from '@ant-design/icons';
 import logo from "../../assets/images/logo.png";
 
 function Sidenav({ color }) {
@@ -83,13 +83,13 @@ function Sidenav({ color }) {
         <span>OCCARZ</span>
       </div>
       <hr />
-      <Menu theme="light" mode="inline">
+      <Menu theme="ar" mode="inline">
         <Menu.Item key="1">
-          <NavLink to="/dashboard">
+          <NavLink to="/statistique">
             <span
               className="icon"
               style={{
-                background: page === "dashboard" ? color : "",
+                background: page === "statistique" ? color : "",
               }}
             >
               {dashboard}
@@ -115,14 +115,14 @@ function Sidenav({ color }) {
           </Menu.ItemGroup>
         </SubMenu>
         <Menu.Item key="3">
-          <NavLink to="/billing">
+          <NavLink to="/annonces">
             <span
               className="icon"
               style={{
-                background: page === "billing" ? color : "",
+                background: page === "annonces" ? color : "",
               }}
             >
-              {billing}
+              {<ContainerOutlined />}
             </span>
             <span className="label">Annonces</span>
           </NavLink>
