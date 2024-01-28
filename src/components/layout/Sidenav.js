@@ -110,8 +110,16 @@ function Sidenav({ color }) {
           className="custom-submenu"
         >
           <Menu.ItemGroup className="custom-item-group">
-            <Menu.Item key="setting:1">Option 1</Menu.Item>
-            <Menu.Item key="setting:2">Option 2</Menu.Item>
+            <Menu.Item key="setting:1">
+              <NavLink to="/tables">
+                <span className="label">Option 1</span>
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item key="setting:2">
+              <NavLink to="/tables">
+                <span className="label">Option 2</span>
+              </NavLink>
+            </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
         <Menu.Item key="3">
