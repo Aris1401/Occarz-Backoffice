@@ -23,6 +23,9 @@ import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import Statistiques from "./pages/Statistiques";
 import Annonces from "./pages/Annonces";
+import Marque from "./pages/CRUD/Marque";
+import Modele from "./pages/CRUD/Modele";
+import Configuration from "./pages/CRUD/Configurations";
 
 function App() {
   return (
@@ -32,8 +35,16 @@ function App() {
         <Route path="/login" exact component={SignIn} />
         <Main>
           <Route exact path="/statistique" component={Statistiques} />
-          {/* <Route exact path="/dashboard" component={Home} />
           <Route exact path="/tables" component={Tables} />
+
+        
+          <Route exact path="/marques" component={Marque} />
+          <Route exact path="/modeles" component={Modele} />
+          <Route exact path="/configuration" component={Configuration} />
+
+
+
+          {/* <Route exact path="/dashboard" component={Home} />
           <Route exact path="/billing" component={Billing} />
           <Route exact path="/rtl" component={Rtl} /> */}
           <Route exact path="/annonces" component={Annonces} />

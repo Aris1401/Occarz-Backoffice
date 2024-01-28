@@ -1,4 +1,4 @@
-import { Menu} from "antd";
+import { Menu } from "antd";
 import { NavLink, useLocation } from "react-router-dom";
 import { MailOutlined, AppstoreOutlined, SettingOutlined, ContainerOutlined } from '@ant-design/icons';
 import logo from "../../assets/images/logo.png";
@@ -101,27 +101,42 @@ function Sidenav({ color }) {
           key="2"
           title={
             <>
-            <span className="icon" style={{ background: page === "tables" ? color : "" }}>
-              {tables}
-            </span>
-            <span className="label">Données</span>
+              <span className="icon" style={{ background: page === "tables" ? color : "" }}>
+                {tables}
+              </span>
+              <span className="label">Données</span>
             </>
           }
           className="custom-submenu"
         >
           <Menu.ItemGroup className="custom-item-group">
             <Menu.Item key="setting:1">
-              <NavLink to="/tables">
-                <span className="label">Option 1</span>
+              <NavLink to="/marques">
+                <span className="label">Marques</span>
               </NavLink>
             </Menu.Item>
             <Menu.Item key="setting:2">
-              <NavLink to="/tables">
-                <span className="label">Option 2</span>
+              <NavLink to="/modeles">
+                <span className="label">Modeles</span>
               </NavLink>
             </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
+
+        <Menu.Item key="3">
+          <NavLink to="/configuration">
+            <span
+              className="icon"
+              style={{
+                background: page === "configuration" ? color : "",
+              }}
+            >
+              {<ContainerOutlined />}
+            </span>
+            <span className="label">Configuration</span>
+          </NavLink>
+        </Menu.Item>
+
         <Menu.Item key="3">
           <NavLink to="/annonces">
             <span

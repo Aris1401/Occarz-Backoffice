@@ -1,5 +1,5 @@
 import { CheckCircleOutlined } from '@ant-design/icons';
-import { Badge, Button, Card, Carousel, Flex, Image, Typography, message } from 'antd'
+import { Badge, Button, Card, Carousel, Flex, Image, Tag, Typography, message } from 'antd'
 import Title from 'antd/es/skeleton/Title'
 import numeral from 'numeral';
 import React from 'react'
@@ -56,7 +56,7 @@ const Annonce = (props) => {
 
                             <Flex gap={5} wrap='wrap'>
                                 { annonce.labels.map(label => {
-                                    return <Badge size='small' text={label} color='blue' />
+                                    return <Tag color='blue'>{label}</Tag>
                                 })}
                             </Flex>
                         </Flex>
