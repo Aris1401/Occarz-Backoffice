@@ -60,7 +60,6 @@ axiosInstance.interceptors.response.use(
 					refreshToken().then((data) => {
 						const rs = data;
 
-						alert(JSON.stringify(rs.data))
 						const { accessToken } = rs.data;
 						window.localStorage.setItem("accessToken", accessToken);
 						axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
