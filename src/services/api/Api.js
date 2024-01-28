@@ -11,7 +11,7 @@ function getLocalAccessToken() {
 function getLocalRefreshToken() {
 	const refreshToken = window.localStorage.getItem("refreshToken");
 
-	if (!refreshToken) window.location.href = "/login";
+	if (!refreshToken) window.location.href = "/connexion";
 
 	return refreshToken;
 }
@@ -71,7 +71,7 @@ axiosInstance.interceptors.response.use(
 					})
 				} catch (_error) {
 					if (_error.response && _error.response.data) {
-						window.location.href = '/login';
+						window.location.href = '/connexion';
 					}
 				}
 			}
@@ -81,7 +81,7 @@ axiosInstance.interceptors.response.use(
 			}
 		}
 
-		window.location.href = '/login';
+		window.location.href = '/connexion';
 	}
 );
 
