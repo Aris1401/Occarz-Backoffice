@@ -22,6 +22,6 @@ export const doLogOut = () => {
         window.localStorage.removeItem("accessToken");
         window.localStorage.removeItem("refreshToken");
         
-        window.location.href = "/login";
+        window.location.href = "/connexion";
     })
 }
