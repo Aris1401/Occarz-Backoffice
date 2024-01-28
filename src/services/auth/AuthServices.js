@@ -9,7 +9,7 @@ export const sendLoginInformations = (loginInfos) => {
             window.localStorage.setItem("accessToken", response.token);
             window.localStorage.setItem("refreshToken", response.refreshToken);
 
-            window.location.href = '/statistique';
+            window.location.href = '/#/statistique';
         }).catch((error) => {
             console.log("Vous devez refaire une requete de connexion.");
         })
@@ -22,6 +22,6 @@ export const doLogOut = () => {
         window.localStorage.removeItem("accessToken");
         window.localStorage.removeItem("refreshToken");
         
-        window.location.href = "/connexion";
+        window.location.href = "/#/connexion";
     })
 }
