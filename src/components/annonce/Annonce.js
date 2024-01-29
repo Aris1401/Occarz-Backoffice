@@ -50,12 +50,12 @@ const Annonce = (props) => {
                         <Image
                             alt="example"
                             style={imageStyle}
-                            src="https://s3.amazonaws.com/thumbnails.venngage.com/template/a8897941-0545-4eaa-a427-76503a01b7e7.png"
+                            src={JSON.parse(images[0]).images[0]}
                         />
 
                     ) :
                     (
-                        <div style={{...imageStyle, backgroundColor: '#000'}}>
+                        <div style={{...imageStyle, backgroundColor: '#000', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff'}}>
                             No image
                         </div>
                     )
