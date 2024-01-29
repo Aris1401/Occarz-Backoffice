@@ -28,6 +28,8 @@ import Modele from "./pages/CRUD/Modele";
 import Configuration from "./pages/CRUD/Configurations";
 import LoginPage from "./components/login/LoginPage";
 import AnneeModele from "./pages/CRUD/AnneeModele";
+import BoiteDeVitesse from "./pages/CRUD/BoiteDeVitesse";
+import CouleurVehicule from "./pages/CRUD/CouleurVehicule";
 
 function App() {
   return (
@@ -44,6 +46,10 @@ function App() {
           <Route exact path="/modeles" component={Modele} />
           <Route exact path="/configuration" component={Configuration} />
           <Route exact path="/anneeModele" component={AnneeModele} />
+          <Route exact path="/boiteDeVitesse" component={BoiteDeVitesse} />
+          <Route exact path="/couleurVehicule" component={CouleurVehicule} />
+
+
 
 
           {/* <Route exact path="/dashboard" component={Home} />

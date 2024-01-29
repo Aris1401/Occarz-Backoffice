@@ -127,6 +127,18 @@ function Sidenav({ color }) {
                 <span className="label">Annee Modeles</span>
               </NavLink>
             </Menu.Item>
+
+            <Menu.Item key="setting:4">
+              <NavLink to="/boiteDeVitesse">
+                <span className="label">Boite de vitesse</span>
+              </NavLink>
+            </Menu.Item>
+
+            <Menu.Item key="setting:5">
+              <NavLink to="/couleurVehicule">
+                <span className="label">Couleurs vehicules</span>
+              </NavLink>
+            </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
 
