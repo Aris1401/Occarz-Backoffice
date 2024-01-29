@@ -45,8 +45,6 @@ const Annonces = () => {
 
         setStartIndex(newStart);
         setEndIndex(newEnd);
-
-        updatePage()
     }
 
     return (
