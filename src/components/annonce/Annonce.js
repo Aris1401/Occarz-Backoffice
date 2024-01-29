@@ -2,8 +2,8 @@ import { CheckCircleOutlined } from '@ant-design/icons';
 import { Badge, Button, Card, Carousel, Flex, Image, Tag, Typography, message } from 'antd'
 import Title from 'antd/es/skeleton/Title'
 import numeral from 'numeral';
-import React from 'react'
-import { validerAnnonce } from '../../services/annonces/AnnoncesServices';
+import React, { useEffect, useState } from 'react'
+import { obtenirImagesAnnonce, validerAnnonce } from '../../services/annonces/AnnoncesServices';
 
 const Annonce = (props) => {
     // Message
@@ -31,6 +31,13 @@ const Annonce = (props) => {
         update()
     }
 
+    const [ images, setImages ] = useState([])
+    useEffect(() => {
+        obtenirImagesAnnonce(annonce.id).then((data) => {
+            setImages(data.data);
+        })
+    }, [])
+
     return (
         <Card style={{ padding: 0, margin: 0 }}
             hoverable
@@ -39,11 +46,20 @@ const Annonce = (props) => {
         >
             <Flex gap={10} style={{ width: '100%' }}>
                 <div>
-                    <Image
-                        alt="example"
-                        style={imageStyle}
-                        src="https://s3.amazonaws.com/thumbnails.venngage.com/template/a8897941-0545-4eaa-a427-76503a01b7e7.png"
-                    />
+                    { images[0] ? (
+                        <Image
+                            alt="example"
+                            style={imageStyle}
+                            src="https://s3.amazonaws.com/thumbnails.venngage.com/template/a8897941-0545-4eaa-a427-76503a01b7e7.png"
+                        />
+
+                    ) :
+                    (
+                        <div style={{...imageStyle, backgroundColor: '#000'}}>
+                            No image
+                        </div>
+                    )
+                    }
                 </div>
 
                 <div style={{ width: '100%' }}>

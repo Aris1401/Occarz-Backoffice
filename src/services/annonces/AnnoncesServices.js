@@ -23,3 +23,11 @@ export const validerAnnonce = (idAnnonce) => {
         })
     });
 }
+
+export const obtenirImagesAnnonce = (idAnnonce) => {
+    return new Promise((resolve, reject) => {
+        axiosInstance.get("/annonces/"+ idAnnonce + "/images").then((data) => {
+            resolve(data.data)
+        })
+    });
+}
