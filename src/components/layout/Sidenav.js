@@ -139,6 +139,12 @@ function Sidenav({ color }) {
                 <span className="label">Couleurs vehicules</span>
               </NavLink>
             </Menu.Item>
+
+            <Menu.Item key="setting:6">
+              <NavLink to="/carburant">
+                <span className="label">Carburants</span>
+              </NavLink>
+            </Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
 
