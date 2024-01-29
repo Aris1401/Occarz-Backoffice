@@ -31,6 +31,9 @@ import AnneeModele from "./pages/CRUD/AnneeModele";
 import BoiteDeVitesse from "./pages/CRUD/BoiteDeVitesse";
 import CouleurVehicule from "./pages/CRUD/CouleurVehicule";
 import Carburant from "./pages/CRUD/Carburant";
+import CategorieVehicule from "./pages/CRUD/CategorieVehicule";
+import NombrePlaces from "./pages/CRUD/NombrePlaces";
+import EtatVehicule from "./pages/CRUD/EtatVehicule";
 
 function App() {
   return (
@@ -50,6 +53,11 @@ function App() {
           <Route exact path="/boiteDeVitesse" component={BoiteDeVitesse} />
           <Route exact path="/couleurVehicule" component={CouleurVehicule} />
           <Route exact path="/carburant" component={Carburant} />
+          <Route exact path="/categorieVehicule" component={CategorieVehicule} />
+          <Route exact path="/nombrePlace" component={NombrePlaces} />
+          <Route exact path="/etatVehicule" component={EtatVehicule} />
+
+
 
 
 
