@@ -20,9 +20,12 @@ function getLocalRefreshToken() {
 
 // Refresh the token
 function refreshToken() {
+	let localRefreshToken = getLocalRefreshToken()
+	if (!localRefreshToken) return Promise.reject();
+
 	return axiosInstance.post("/auth/refreshtoken", {
-		refreshToken: getLocalRefreshToken()
-	});
+		refreshToken: localRefreshToken
+	})
 }
 
 const cloudUrl = 'https://occarz-backend-production.up.railway.app/api/v1';
@@ -58,21 +61,31 @@ axiosInstance.interceptors.response.use(
 			if (err.response.status === 401 && !originalConfig._retry) {
 				originalConfig._retry = true;
 
+				const localRefreshToken = getLocalRefreshToken();
+					if (!localRefreshToken) {
+						window.location.href = '/#/' + LOGIN_PAGE;
+						return Promise.reject(err.response);
+					}
+
 				try {
 					refreshToken().then((data) => {
-						const rs = data;
+						if (data) {
+							const rs = data;
 
-						const { accessToken } = rs.data;
-						window.localStorage.setItem("accessToken", accessToken);
-						axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
-	
-						return axiosInstance(originalConfig);
+							const { accessToken } = rs.data;
+							window.localStorage.setItem("accessToken", accessToken);
+							axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken;
+		
+							return axiosInstance(originalConfig);
+						}
+
 					}).catch((error) => {
 						return axiosInstance(originalConfig);
 					})
 				} catch (_error) {
 					if (_error.response && _error.response.data) {
 						window.location.href = '/#/' + LOGIN_PAGE;
+						return Promise.reject(err.response);
 					}
 				}
 			}

@@ -6,6 +6,7 @@ import { getCommisions, getMois, getStatistiquesAnnees } from '../services/stati
 import VentesMoisAnnees from '../components/chart/statistiques/VentesMoisAnnees';
 import VentesMarqueLineChart from '../components/chart/statistiques/VentesMarqueLineChart';
 import numeral from 'numeral';
+import { DollarOutlined } from '@ant-design/icons';
 
 const Statistiques = () => {
     const { Title, Text } = Typography;
@@ -32,16 +33,16 @@ const Statistiques = () => {
             today: "Commission total",
             title: "0Ar",
             persent: "",
-            icon: "",
+            icon: <DollarOutlined />,
             bnb: ""
         },
-        {
-            today: "Nombre de ventes",
-            title: "0",
-            persent: "",
-            icon: "",
-            bnb: ""
-        }
+        // {
+        //     today: "Nombre de ventes",
+        //     title: "0",
+        //     persent: "",
+        //     icon: "",
+        //     bnb: ""
+        // }
     ];
     const [ statistiques, setStatistiques ] = useState(statistiquesNombres);
 
