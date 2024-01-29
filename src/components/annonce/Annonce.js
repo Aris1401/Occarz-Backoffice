@@ -47,10 +47,10 @@ const Annonce = (props) => {
         >
             <Flex gap={10} style={{ width: '100%' }}>
                 <div>
-                    { images ? (
+                    { images.length > 0 ? (
                         <Carousel style={imageStyle} dotPosition='right'>
                             { images.map((i) => {
-                                JSON.parse(i).images && JSON.parse(i).images.map((image, index) => {
+                                return JSON.parse(i).images && JSON.parse(i).images.map((image, index) => {
                                     return (
                                         <div key={index} style={imageStyle}>
                                             <Image
