@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/connexion1" exact component={LoginPage} />
-        <Route path="/connexion" exact component={SignIn} />
+        <Route path="/" exact component={LoginPage} />
         <Main>
           <Route exact path="/statistique" component={Statistiques} />
           <Route exact path="/tables" component={Tables} />

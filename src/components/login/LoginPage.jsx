@@ -7,6 +7,11 @@ import { sendLoginInformations } from '../../services/auth/AuthServices';
 const LoginPage = () => {
   const { Paragraph } = Typography;
 
+  useEffect(() => {
+    let access = window.localStorage.getItem("accessToken");
+    if (access) window.location.href = "/#/statistique";
+  }, [])
+
   const [loginForm] = Form.useForm();
   const [errorMessage, setErrorMessage] = useState(undefined)
 
