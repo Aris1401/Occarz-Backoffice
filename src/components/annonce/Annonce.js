@@ -34,8 +34,8 @@ const Annonce = (props) => {
     const [ images, setImages ] = useState([])
     useEffect(() => {
         obtenirImagesAnnonce(annonce.id).then((data) => {
-            console.log(data.data[0] ? JSON.parse(data.data[0]) : undefined)
-            setImages(data.data[0] ? JSON.parse(data.data[0]) : undefined);
+            // console.log(data.data)
+            setImages(data.data);
         })
     }, [])
 
@@ -49,18 +49,19 @@ const Annonce = (props) => {
                 <div>
                     { images ? (
                         <Carousel style={imageStyle} dotPosition='right'>
-                            { images.images && images.images.map((image, index) => {
-                                return (
-                                    <div key={index} style={imageStyle}>
-                                        <Image
-                                            alt="example"
-                                            src={image}
-                                            style={imageStyle}
-                                        />
-                                    </div>
-                                )
-                                })
-                            }
+                            { images.map((i) => {
+                                JSON.parse(i).images && JSON.parse(i).images.map((image, index) => {
+                                    return (
+                                        <div key={index} style={imageStyle}>
+                                            <Image
+                                                alt="example"
+                                                src={image}
+                                                style={imageStyle}
+                                            />
+                                        </div>
+                                    )
+                                    })
+                            }) }
                         </Carousel>
 
                     ) :
