@@ -45,7 +45,7 @@ function App() {
           <Route exact path="/statistique" component={Statistiques} />
           <Route exact path="/tables" component={Tables} />
 
-        
+
           <Route exact path="/marques" component={Marque} />
           <Route exact path="/modeles" component={Modele} />
           <Route exact path="/configuration" component={Configuration} />
@@ -62,8 +62,8 @@ function App() {
           <Route exact path="/billing" component={Billing} />
           <Route exact path="/rtl" component={Rtl} /> */}
           <Route exact path="/annonces" component={Annonces} />
-          {/* <Redirect from="/" to="/connexion1" />/ */}
         </Main>
+        <Redirect exact from="/" to="/connexion1" />
       </Switch>
     </div>
   );

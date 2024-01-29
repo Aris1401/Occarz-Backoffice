@@ -5,6 +5,8 @@ export const getStatistiquesAnnees = () => {
         axiosInstance.get('admin/statistiques/annees')
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+
         })
     });
 }
@@ -14,6 +16,8 @@ export const getMois = () => {
         axiosInstance.get('admin/statistiques/mois')
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+
         })
     })
 }
@@ -23,6 +27,8 @@ export const getDetailsCommisions = (annee) => {
         axiosInstance.get(`admin/statistiques/commissions?annee=${annee}`)
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+            
         })
     })
 }
@@ -32,6 +38,8 @@ export const getDetailsVente = (annee, mois) => {
         axiosInstance.get(`admin/statistiques/ventes?annee=${annee}&mois=${mois}`)
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+            
         })
     })
 }
@@ -41,6 +49,8 @@ export const getDetailsVenteMarque = (annee, mois) => {
         axiosInstance.get(`admin/statistiques/ventes/marques?annee=${annee}&mois=${mois}`)
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+            
         })
     })
 }
@@ -50,6 +60,8 @@ export const getCommisions = (annee) => {
         axiosInstance.get(`admin/statistiques/commissions/${annee}`)
         .then(data => {
             resolve(data.data);
+        }).catch((err) => {
+            
         })
     })
 }

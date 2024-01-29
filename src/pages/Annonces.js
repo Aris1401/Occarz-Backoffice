@@ -29,6 +29,8 @@ const Annonces = () => {
 
             setTotalResultats(response.nombreResultats)
             setAnnonces(response.annoncesFiltrees)
+        }).catch((error) => {
+            
         })
     }, [update])
 

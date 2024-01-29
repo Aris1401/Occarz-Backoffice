@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Card, Flex, Typography, Alert } from 'antd';
 import { UserOutlined, LockOutlined, WarningOutlined } from '@ant-design/icons';
 import './LoginPage.css';
@@ -33,12 +33,12 @@ const LoginPage = () => {
           <div className="login-container">
             <h3>OCCAR-Z Office</h3>
             <div className="form-container">
-              <Form name="loginForm" form={loginForm} initialValues={{ remember: true }} onFinish={onFinish}>
+              <Form name="loginForm" form={loginForm} initialValues={{ remember: true, email: "admin@gmail.com", password: "admin" }} onFinish={onFinish}>
                 <Form.Item
                   name="email"
                   rules={[{ required: true, message: "Veuillez entrer votre nom d'utilisateur!" }]}
                 >
-                  <Input prefix={<UserOutlined />} placeholder="Nom d'utilisateur" />
+                  <Input prefix={<UserOutlined />}  placeholder="Nom d'utilisateur" />
                 </Form.Item>
 
                 <Form.Item

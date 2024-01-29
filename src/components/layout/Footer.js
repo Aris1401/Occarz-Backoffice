@@ -21,16 +21,12 @@ function Footer() {
       <Row className="just">
         <Col xs={24} md={12} lg={12}>
           <div className="copyright">
-            © 2021, made with
-            {<HeartFilled />} by
-            <a href="#pablo" className="font-weight-bold" target="_blank">
-              Creative Tim
-            </a>
-            for a better web.
+            © 2023, made with
+            {<HeartFilled />}.
           </div>
         </Col>
         <Col xs={24} md={12} lg={12}>
-          <div className="footer-menu">
+          {/* <div className="footer-menu">
             <ul>
               <li className="nav-item">
                 <a
@@ -69,7 +65,7 @@ function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </Col>
       </Row>
     </AntFooter>
