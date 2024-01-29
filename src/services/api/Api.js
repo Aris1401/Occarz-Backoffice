@@ -80,6 +80,8 @@ axiosInstance.interceptors.response.use(
 			if (err.response.status === 403 && err.response.data) {
 				return Promise.reject(err.response.data);
 			}
+		} else {
+			return Promise.reject(err.response)
 		}
 
 		window.location.href = '/#/' + LOGIN_PAGE;

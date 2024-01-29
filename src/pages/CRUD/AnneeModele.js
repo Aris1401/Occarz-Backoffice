@@ -51,7 +51,7 @@ const AnneeModele = () => {
     }, [])
 
   return (
-    <CrudComponent formInputs={formInputs} data={modeles} columnsData={colums} entityName = "modeles" />
+    <CrudComponent formInputs={formInputs} data={modeles} columnsData={colums} entityName = "anneeModeles" />
   )
 }
 

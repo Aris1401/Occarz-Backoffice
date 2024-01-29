@@ -10,8 +10,10 @@ export const sendLoginInformations = (loginInfos) => {
             window.localStorage.setItem("refreshToken", response.refreshToken);
 
             window.location.href = '/#/statistique';
+            resolve(response)
         }).catch((error) => {
-            console.log("Vous devez refaire une requete de connexion.");
+            reject(error)
+            // console.log("Vous devez refaire une requete de connexion.");
         })
     });
 }
