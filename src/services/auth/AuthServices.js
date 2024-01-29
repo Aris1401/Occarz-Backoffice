@@ -1,4 +1,4 @@
-import axiosInstance from "../api/Api";
+import axiosInstance, { LOGIN_PAGE } from "../api/Api";
 
 export const sendLoginInformations = (loginInfos) => {
     return new Promise((resolve, reject) => {
@@ -22,6 +22,6 @@ export const doLogOut = () => {
         window.localStorage.removeItem("accessToken");
         window.localStorage.removeItem("refreshToken");
         
-        window.location.href = "/#/connexion";
+        window.location.href = "/#/" + LOGIN_PAGE;
     })
 }

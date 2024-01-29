@@ -26,11 +26,14 @@ import Annonces from "./pages/Annonces";
 import Marque from "./pages/CRUD/Marque";
 import Modele from "./pages/CRUD/Modele";
 import Configuration from "./pages/CRUD/Configurations";
+import LoginPage from "./components/login/LoginPage";
+import AnneeModele from "./pages/CRUD/AnneeModele";
 
 function App() {
   return (
     <div className="App">
       <Switch>
+        <Route path="/connexion1" exact component={LoginPage} />
         <Route path="/connexion" exact component={SignIn} />
         <Main>
           <Route exact path="/statistique" component={Statistiques} />
@@ -40,7 +43,7 @@ function App() {
           <Route exact path="/marques" component={Marque} />
           <Route exact path="/modeles" component={Modele} />
           <Route exact path="/configuration" component={Configuration} />
-
+          <Route exact path="/anneeModele" component={AnneeModele} />
 
 
           {/* <Route exact path="/dashboard" component={Home} />

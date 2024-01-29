@@ -1,5 +1,7 @@
 import axios from "axios";
 
+export const LOGIN_PAGE = 'connexion1';
+
 // Obtenir le token local
 function getLocalAccessToken() {
 	const accessToken = window.localStorage.getItem("accessToken");
@@ -11,7 +13,7 @@ function getLocalAccessToken() {
 function getLocalRefreshToken() {
 	const refreshToken = window.localStorage.getItem("refreshToken");
 
-	if (!refreshToken) window.location.href = "/#/connexion";
+	if (!refreshToken) window.location.href = "/#/" + LOGIN_PAGE;
 
 	return refreshToken;
 }
@@ -70,7 +72,7 @@ axiosInstance.interceptors.response.use(
 					})
 				} catch (_error) {
 					if (_error.response && _error.response.data) {
-						window.location.href = '/#/connexion';
+						window.location.href = '/#/' + LOGIN_PAGE;
 					}
 				}
 			}
@@ -80,7 +82,7 @@ axiosInstance.interceptors.response.use(
 			}
 		}
 
-		window.location.href = '/#/connexion';
+		window.location.href = '/#/' + LOGIN_PAGE;
 	}
 );
 

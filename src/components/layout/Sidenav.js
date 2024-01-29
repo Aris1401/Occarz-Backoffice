@@ -115,9 +115,16 @@ function Sidenav({ color }) {
                 <span className="label">Marques</span>
               </NavLink>
             </Menu.Item>
+
             <Menu.Item key="setting:2">
               <NavLink to="/modeles">
                 <span className="label">Modeles</span>
+              </NavLink>
+            </Menu.Item>
+
+            <Menu.Item key="setting:3">
+              <NavLink to="/anneeModele">
+                <span className="label">Annee Modeles</span>
               </NavLink>
             </Menu.Item>
           </Menu.ItemGroup>
