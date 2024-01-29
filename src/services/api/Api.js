@@ -29,7 +29,7 @@ const cloudUrl = 'https://occarz-backend-production.up.railway.app/api/v1';
 const localUrl = 'http://localhost:8080/api/v1';
 
 const axiosInstance = axios.create({
-	baseURL: cloudUrl,
+	baseURL: localUrl,
 	headers: {
 		"Content-Type": "application/json"
 	}
