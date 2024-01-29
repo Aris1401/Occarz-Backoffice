@@ -58,10 +58,6 @@ function App() {
           <Route exact path="/etatVehicule" component={EtatVehicule} />
 
 
-
-
-
-
           {/* <Route exact path="/dashboard" component={Home} />
           <Route exact path="/billing" component={Billing} />
           <Route exact path="/rtl" component={Rtl} /> */}

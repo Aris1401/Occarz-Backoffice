@@ -3065,3 +3065,11 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   padding-left: 24px;
   font-weight: bold;
 }
+
+.custom-submenu .custom-item-group .label{
+  text-decoration: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}

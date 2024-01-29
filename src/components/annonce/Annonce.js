@@ -15,8 +15,8 @@ const Annonce = (props) => {
     const { Title, Paragraph } = Typography;
 
     let imageStyle = {
-        width: 200,
-        height: 120,
+        width: '200px',
+        height: '120px',
         borderTopLeftRadius: 10,
         borderBottomLeftRadius: 10
     }
@@ -34,7 +34,8 @@ const Annonce = (props) => {
     const [ images, setImages ] = useState([])
     useEffect(() => {
         obtenirImagesAnnonce(annonce.id).then((data) => {
-            setImages(data.data);
+            console.log(data.data[0] ? JSON.parse(data.data[0]) : undefined)
+            setImages(data.data[0] ? JSON.parse(data.data[0]) : undefined);
         })
     }, [])
 
@@ -46,12 +47,21 @@ const Annonce = (props) => {
         >
             <Flex gap={10} style={{ width: '100%' }}>
                 <div>
-                    { images[0] ? (
-                        <Image
-                            alt="example"
-                            style={imageStyle}
-                            src={JSON.parse(images[0]).images[0]}
-                        />
+                    { images ? (
+                        <Carousel style={imageStyle} dotPosition='right'>
+                            { images.images && images.images.map((image, index) => {
+                                return (
+                                    <div key={index} style={imageStyle}>
+                                        <Image
+                                            alt="example"
+                                            src={image}
+                                            style={imageStyle}
+                                        />
+                                    </div>
+                                )
+                                })
+                            }
+                        </Carousel>
 
                     ) :
                     (

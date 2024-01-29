@@ -76,6 +76,10 @@ function Sidenav({ color }) {
     </svg>,
   ];
 
+  let hrefStyle = {
+    textDecoration: 'none'
+  }
+
   return (
     <>
       <div className="brand">
@@ -85,7 +89,7 @@ function Sidenav({ color }) {
       <hr />
       <Menu theme="ar" mode="inline">
         <Menu.Item key="1">
-          <NavLink to="/statistique">
+          <NavLink style={hrefStyle} to="/statistique">
             <span
               className="icon"
               style={{
@@ -111,55 +115,55 @@ function Sidenav({ color }) {
         >
           <Menu.ItemGroup className="custom-item-group">
             <Menu.Item key="setting:1">
-              <NavLink to="/marques">
-                <span className="label">Marques</span>
+              <NavLink style={hrefStyle} to="/marques">
+                <span className="label nav-link">Marques</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:2">
-              <NavLink to="/modeles">
+              <NavLink style={hrefStyle} to="/modeles">
                 <span className="label">Modeles</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:3">
-              <NavLink to="/anneeModele">
+              <NavLink style={hrefStyle} to="/anneeModele">
                 <span className="label">Annee Modeles</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:4">
-              <NavLink to="/boiteDeVitesse">
+              <NavLink style={hrefStyle} to="/boiteDeVitesse">
                 <span className="label">Boite de vitesse</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:5">
-              <NavLink to="/couleurVehicule">
+              <NavLink style={hrefStyle} to="/couleurVehicule">
                 <span className="label">Couleurs vehicules</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:6">
-              <NavLink to="/carburant">
+              <NavLink style={hrefStyle} to="/carburant">
                 <span className="label">Carburants</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:7">
-              <NavLink to="/categorieVehicule">
+              <NavLink style={hrefStyle} to="/categorieVehicule">
                 <span className="label">Categorie vehicules</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:8">
-              <NavLink to="/nombrePlace">
+              <NavLink style={hrefStyle} to="/nombrePlace">
                 <span className="label">Nombres places</span>
               </NavLink>
             </Menu.Item>
 
             <Menu.Item key="setting:9">
-              <NavLink to="/etatVehicule">
+              <NavLink style={hrefStyle} to="/etatVehicule">
                 <span className="label">Etat vehicule</span>
               </NavLink>
             </Menu.Item>
@@ -167,7 +171,7 @@ function Sidenav({ color }) {
         </SubMenu>
 
         <Menu.Item key="3">
-          <NavLink to="/configuration">
+          <NavLink style={hrefStyle} to="/configuration">
             <span
               className="icon"
               style={{
@@ -181,7 +185,7 @@ function Sidenav({ color }) {
         </Menu.Item>
 
         <Menu.Item key="3">
-          <NavLink to="/annonces">
+          <NavLink style={hrefStyle} to="/annonces">
             <span
               className="icon"
               style={{
