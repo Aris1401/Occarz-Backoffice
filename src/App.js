@@ -66,7 +66,7 @@ function App() {
           <Route exact path="/billing" component={Billing} />
           <Route exact path="/rtl" component={Rtl} /> */}
           <Route exact path="/annonces" component={Annonces} />
-          {/* <Redirect from="*" to="/statistique" /> */}
+          {/* <Redirect from="/" to="/connexion1" />/ */}
         </Main>
       </Switch>
     </div>
